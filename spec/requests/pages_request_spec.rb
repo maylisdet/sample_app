@@ -7,6 +7,10 @@ RSpec.describe "Pages", type: :request do
       get "/pages/home"
       expect(response).to have_http_status(:success)
     end
+    it  "doit avoir le bon titre" do
+      get "/pages/contact"
+      expect(response).to have_title("Simple App du Tutoriel Ruby on Rails | Accueil")
+    end
   end
 
   describe "GET /contact" do
@@ -14,12 +18,20 @@ RSpec.describe "Pages", type: :request do
       get "/pages/contact"
       expect(response).to have_http_status(:success)
     end
+    it  "doit avoir le bon titre" do
+      get "/pages/contact"
+      expect(response).to have_title("Simple App du Tutoriel Ruby on Rails | Contact")
+    end
   end
 
   describe "GET /about" do
     it "returns http success" do
       get "/pages/about"
       expect(response).to have_http_status(:success)
+    end
+    it  "doit avoir le bon titre" do
+      get "/pages/contact"
+      expect(response).to have_title("Simple App du Tutoriel Ruby on Rails | A propos")
     end
   end
 
